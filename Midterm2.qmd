@@ -1,12 +1,34 @@
 ---
-title: "hmw"
-format: html
+title: "Midterm 3"
+author: "Arun, David, and Daniel"
+date: today
+date-format: long
+format:
+  html:
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+    toc: false
+    toc-depth: 2
+    embed-resources: true
+  pdf:
+    toc: false
+    toc-depth: 2
+    pdf-engine: xelatex
 ---
 
+# Q1: David
 
+# Q1: Arun
 
-## Model
+# Q1: Daniel
 
-$$
+# Q2
 
-$$
+# Q3
+
+# Q4
+
+# Q5 (together)
+
