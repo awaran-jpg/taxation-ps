@@ -1,5 +1,6 @@
 ---
-title: "Midterm 3"
+title: "Midterm 2"
+subtitle: "Taxation, Redistribution, and the Macroeconomy"
 author: "Arun, David, and Daniel"
 date: today
 date-format: long
