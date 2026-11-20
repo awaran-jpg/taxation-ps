@@ -22,13 +22,46 @@ format:
 
 # Q1: Arun
 
+### a:
+
+$$
+\begin{aligned}
+\max_{c_L,c_H,y_L,y_H} \quad
+& u(c_L)+u(c_H)
+-v\left(\frac{y_L}{w_L}\right)
+-v\left(\frac{y_H}{w_H}\right) \\
+\text{subject to} \quad
+& c_L+c_H=y_L+y_H.
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\mathcal{L}
+= {} & u(c_L) + u(c_H)
+- v\left(\frac{y_L}{w_L}\right)
+- v\left(\frac{y_H}{w_H}\right) + \lambda(y_L+y_H-c_L-c_H).
+\end{aligned}
+$$
+
+FOCs:
+
+$$
+\frac{\partial \mathcal{L}}{\partial c_L}
+= u'(c_L)-\lambda=0,
+\\\\
+\frac{\partial \mathcal{L}}{\partial c_H}
+= u'(c_H)-\lambda=0
+
+$$
+
+
 # Q1: Daniel
 
-# Q2
+# Q2 (David)
 
-# Q3
+# Q3 (Arun)
 
-# Q4
+# Q4 (Daniel)
 
 # Q5 (together)
-
