@@ -73,7 +73,7 @@ $$
 Since $u''<0$, marginal utility is decreasing in consumption:
 
 $$
-\boxed{c_L=c_H=\bar{c}.}
+c_L=c_H=\bar{c}.
 $$
 
 Combining the earnings FOCs gives:
@@ -172,6 +172,100 @@ $$
 $$
 
 ## Part B: Ramsey taxation
+
+### e: 
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&u(c_i)-v(n_i)\\
+\text{s.t.}\quad
+&c_i=w_i n_i-T(w_i n_i;\theta).
+\end{aligned}
+$$
+
+The FOC for $n_i$ is:
+
+$$
+u'(c_i)w_i[1-T_y(y_i;\theta)]-v'(n_i)=0.
+$$
+
+$$
+\frac{v'(n_i)}{u'(c_i)}
+=w_i[1-T_y(y_i;\theta)].
+$$
+
+When we take $\theta=(t,B)$ and $T(y;\theta)=ty-B$, the household problem becomes:
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&u(c_i)-v(n_i)\\
+\text{s.t.}\quad
+&c_i=(1-t)w_i n_i+B.
+\end{aligned}
+$$
+
+The FOC under the above method simplifies to:
+
+$$
+\frac{v'(n_i)}{u'(c_i)}=w_i(1-t).
+$$
+
+An additional hour of work will increase earnings by $w_i$, but sets after-tax consumption to $w_i(1-t)$.
+
+So, the tax schedule will reduce the utility gotten from an additional hour of work, and create a wedge between the MRS and productivity. The first-best condition is not met unless the marginal tax rate is zero.
+
+## f:
+
+For the tax schedule $T(y;\theta)$ consists of allocations $(c_i,n_i,y_i)$ for each type $i\in\{L,H\}$ such that:
+
+1. Households optimize. They do so according to:
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&u(c_i)-v(n_i)\\
+\text{s.t.}\quad
+&c_i=w_i n_i-T(w_i n_i;\theta).
+\end{aligned}
+$$
+
+2. The government budget balances. As the government does not make purchases, the aggregate net tax revenue must equal zero:
+
+$$
+T(y_L;\theta)+T(y_H;\theta)=0.
+$$
+
+3. The goods market clears. Aggregate consumption must equal aggregate production: 
+
+$$
+c_L+c_H=y_L+y_H.
+$$
+
+Given Walras' law, if the first two conditions are met, then the last market automatically clears.
+
+## g:
+
+$$
+\begin{aligned}
+\max_{\theta,c_L,c_H,n_L,n_H}\quad
+&u(c_L)-v(n_L)+u(c_H)-v(n_H)\\
+\text{s.t.}\quad
+&c_L=w_Ln_L-T(w_Ln_L;\theta),\\
+&c_H=w_Hn_H-T(w_Hn_H;\theta),\\
+&u'(c_L)w_L[1-T_y(w_Ln_L;\theta)]=v'(n_L),\\
+&u'(c_H)w_H[1-T_y(w_Hn_H;\theta)]=v'(n_H),\\
+&T(w_Ln_L;\theta)+T(w_Hn_H;\theta)=0,\\
+&c_L+c_H=w_Ln_L+w_Hn_H.
+\end{aligned}
+$$
+
+The constraints correspond to the definition of the TDCE in that they include the two household budget constraints, the two labor supply FOCs, the government budget balancing, and the goods market clearing.
+
+This implies that the planner can only implement allocations under a tax schedule from the specified family. For example, the linear Ramsey problem imposes the same marginal rate on both the high and low types.
+
+The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to determine the equilibrium levels for consumption $c_i(\theta)$, labor supply $n_i(\theta)$, and earnings $y_i(\theta)$, while balancing the government budget. Then, those equilibrium levels should be substituted into the welfare function, to choose the $\theta$ that maximizes social welfare.
 
 # Q1: Daniel
 
