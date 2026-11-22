@@ -21,7 +21,7 @@ format:
 
 # Question 1: David
 
-## Part A
+## Part A (Mirrlees)
 
 a. The planner solves:
 
@@ -77,7 +77,15 @@ d. In class we've stated the following conclusion:
 
 > 3. We can have a marginal tax (T'(y_L)>0) to preserve incentives, so we can't make the low-type attractice so that the high-type does not end up mimicking the low-type. This relaxes the high-type IC and lets the planner redistribute more.
 
-## Part B
+## Part B (Ramsey)
+
+
+
+
+
+
+\breakpage
+
 
 
 
@@ -327,7 +335,13 @@ This implies that the planner can only implement allocations under a tax schedul
 
 The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to determine the equilibrium levels for consumption $c_i(\theta)$, labor supply $n_i(\theta)$, and earnings $y_i(\theta)$, while balancing the government budget. Then, those equilibrium levels should be substituted into the welfare function, to choose the $\theta$ that maximizes social welfare.
 
+\breakpage
+
 # Q1: Daniel
+
+
+
+\breakpage
 
 # Q2 (David)
 
