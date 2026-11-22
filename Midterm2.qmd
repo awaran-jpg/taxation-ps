@@ -405,11 +405,22 @@ It follows that the planner's first best solution occurs when $c_h = c_n$, and
 $$
 \frac{w_h}{w_l} = \frac{v'(n_h)}{v'(n_l)} > 1
 $$
-which implies that the marginal dis-utility of labor is larger for the high type. It follows that the high type provides more labor than the low type at the first best solution, and thus has lower utility.
+which implies that the marginal dis-utility of labor is larger for the high type. It follows that the high type provides more labor than the low type at the first best solution, and thus has lower utility, given that consumption is equivalent. 
 
 b)
 
+Both types would choose $(c_L, y_L)$. Both types choose this bundle because both bundles have the same amount of consumption, but the low type bundle requires the worker to produce less, and thus enjoy more leisure. 
 
+c)
+Incentive compatibility means that the high type would prefer it's bundle over the low types bundle: 
+$$
+u(c_h) - v(y_h w_h^{-1}) - u(c_l)+v(y_l w_h^{-1})>0
+$$
+$$
+\max_{c_h, c_l, y_h, y_l}  \frac{1}{2}(u(c_h)-v(y_h w_h ^{-1}))+\frac{1}{2}(u(c_l)  -n(y_lw_l^{-1})) \\
+\text{Subject to:}\\
+c_h +c_l= w_h n_h + w_ln_l\\
+$$
 
 
 \newpage
