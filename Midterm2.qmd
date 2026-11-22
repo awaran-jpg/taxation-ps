@@ -84,7 +84,7 @@ d. In class we've stated the following conclusion:
 
 
 
-\breakpage
+\newpage
 
 
 
@@ -335,13 +335,13 @@ This implies that the planner can only implement allocations under a tax schedul
 
 The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to determine the equilibrium levels for consumption $c_i(\theta)$, labor supply $n_i(\theta)$, and earnings $y_i(\theta)$, while balancing the government budget. Then, those equilibrium levels should be substituted into the welfare function, to choose the $\theta$ that maximizes social welfare.
 
-\breakpage
+\newpage
 
 # Q1: Daniel
 
 
 
-\breakpage
+\newpage
 
 # Q2 (David)
 
