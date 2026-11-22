@@ -83,13 +83,256 @@ d. In class we've stated the following conclusion:
 
 # Q1: Arun
 
+## Part A: Mirrlees Taxation
+
+### a:
+
+$$
+\begin{aligned}
+\max_{c_L,c_H,y_L,y_H} \quad
+& u(c_L)+u(c_H)
+-v\left(\frac{y_L}{w_L}\right)
+-v\left(\frac{y_H}{w_H}\right) \\
+\text{s.t.} \quad
+& c_L+c_H=y_L+y_H.
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\mathcal{L}
+= {} & u(c_L) + u(c_H)
+- v\left(\frac{y_L}{w_L}\right)
+- v\left(\frac{y_H}{w_H}\right) + \lambda(y_L+y_H-c_L-c_H).
+\end{aligned}
+$$
+
+FOCs:
+
+$$
+\begin{aligned}
+\frac{\partial\mathcal{L}}{\partial c_L}
+&=u'(c_L)-\lambda=0,\\
+\frac{\partial\mathcal{L}}{\partial c_H}
+&=u'(c_H)-\lambda=0,\\
+\frac{\partial\mathcal{L}}{\partial y_L}
+&=-\frac{1}{w_L}v'\left(\frac{y_L}{w_L}\right)+\lambda=0,\\
+\frac{\partial\mathcal{L}}{\partial y_H}
+&=-\frac{1}{w_H}v'\left(\frac{y_H}{w_H}\right)+\lambda=0,\\
+\frac{\partial\mathcal{L}}{\partial\lambda}
+&=y_L+y_H-c_L-c_H=0.
+\end{aligned}
+$$
+
+Combining the consumption FOCs gives:
+
+$$
+u'(c_L)=u'(c_H)=\lambda.
+$$
+
+Since $u''<0$, marginal utility is decreasing in consumption:
+
+$$
+c_L=c_H=\bar{c}.
+$$
+
+Combining the earnings FOCs gives:
+
+$$
+\frac{v'(y_L/w_L)}{w_L}
+=
+\frac{v'(y_H/w_H)}{w_H}
+=\lambda.
+$$
+
+Since $n_i=y_i/w_i$, we can rewrite as:
+
+$$
+v'(n_L)=\lambda w_L,
+\qquad
+v'(n_H)=\lambda w_H.
+$$
+
+Since $w_H>w_L$ and $\lambda>0$,
+
+$$
+v'(n_H)>v'(n_L).
+$$
+
+Because $v''>0$, marginal disutility of labor is strictly increasing, so $n_H>n_L$. Therefore, we can say that:
+
+$$
+y_H>y_L
+$$
+
+We can combine the consumption and earnings FOCs to get:
+
+$$
+\frac{v'(y_i/w_i)}{w_i}=u'(c_i).
+\\\\
+\frac{v'(n_i)}{u'(c_i)}=w_i.
+$$
+
+Via this, we have that the marginal rate of substitution equals the marginal rate of transformation, so the first-best efficiency condition is satisfied.
+
+Since $c_H=c_L=\bar{c}$, net taxes for each type are:
+
+$$
+t_i=y_i^*-\bar{c}.
+$$
+Since $y_H^*>y_L^*$, we have $t_H>0$ and $t_L<0$. So, there is redistribution from the high-productivity to the low-productivity workers.
+
+### b:
+
+For the low-productivity worker, since $y_h>y_L$, choosing the high-type bundle would require more labor without any additional consumption, so they choose the low-type bundle. The utility functions are identical, so the high-productivity worker would do the same.
+
+### c:
+
+
+$$
+\begin{aligned}
+\max_{c_L,c_H,y_L,y_H}\quad
+&u(c_L)+u(c_H)
+-v(y_L/w_L)-v(y_H/w_H)\\
+\text{s.t.}\quad
+&c_L+c_H=y_L+y_H,\\
+\quad
+&u(c_H)-v(y_H/w_H)
+= u(c_L)-v(y_L/w_H), \quad \text{(IC-H)} \\
+\quad
+&u(c_L)-v(y_L/w_L)
+> u(c_H)-v(y_H/w_L). \quad \text{(IC-L)}
+\end{aligned}
+$$
+
+These conditions require the workers to prefer their intended bundles (the high-productivity worker prefers the high-type bundle, and vice versa). These constraints restrict the feasible allocations to those under which neither type wants the other's bundle. The planner cannot implement the first-best allocation because both types would choose the low-type bundle.
+
+At the separating optimum, the high-productivity constraint binds, while the low-productivity constraint is slack. The former holds with equality, while the latter holds with strict inequality.
+
+### d:
+
+The three results are:
+
+1. Tax levels implement the optimal allocation and redistribute. At the redistributive optimum, the high type pays net taxes and the low type receives a transfer. This follows from the budget constraint $c_i=y_i-T(y_i)$.
+
+$$
+T(y_i^*)=y_i^*-c_i^*.
+$$
+
+2. No distortion at the top. The high type faces a zero marginal income tax rate, so additional earnings are not taxed at the margin. This follows from the optimality conditions. Distorting the high-type labor does not relax the high-type incentive constraint.
+
+$$
+\boxed{T'(y_H^*)=0.}
+$$
+
+3. Positive marginal taxation at the bottom. This happens because the high-type incentive constraint binds. Reducing the low type's earnings makes the bundle less attractive to high-productivity workers who might take the low type. This allows for more redistribution.
+
+$$
+\boxed{0<T'(y_L^*)<1.}
+$$
+
+## Part B: Ramsey taxation
+
+### e: 
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&u(c_i)-v(n_i)\\
+\text{s.t.}\quad
+&c_i=w_i n_i-T(w_i n_i;\theta).
+\end{aligned}
+$$
+
+The FOC for $n_i$ is:
+
+$$
+u'(c_i)w_i[1-T_y(y_i;\theta)]-v'(n_i)=0.
+$$
+
+$$
+\frac{v'(n_i)}{u'(c_i)}
+=w_i[1-T_y(y_i;\theta)].
+$$
+
+When we take $\theta=(t,B)$ and $T(y;\theta)=ty-B$, the household problem becomes:
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&u(c_i)-v(n_i)\\
+\text{s.t.}\quad
+&c_i=(1-t)w_i n_i+B.
+\end{aligned}
+$$
+
+The FOC under the above method simplifies to:
+
+$$
+\frac{v'(n_i)}{u'(c_i)}=w_i(1-t).
+$$
+
+An additional hour of work will increase earnings by $w_i$, but sets after-tax consumption to $w_i(1-t)$.
+
+So, the tax schedule will reduce the utility gotten from an additional hour of work, and create a wedge between the MRS and productivity. The first-best condition is not met unless the marginal tax rate is zero.
+
+## f:
+
+For the tax schedule $T(y;\theta)$ consists of allocations $(c_i,n_i,y_i)$ for each type $i\in\{L,H\}$ such that:
+
+1. Households optimize. They do so according to:
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&u(c_i)-v(n_i)\\
+\text{s.t.}\quad
+&c_i=w_i n_i-T(w_i n_i;\theta).
+\end{aligned}
+$$
+
+2. The government budget balances. As the government does not make purchases, the aggregate net tax revenue must equal zero:
+
+$$
+T(y_L;\theta)+T(y_H;\theta)=0.
+$$
+
+3. The goods market clears. Aggregate consumption must equal aggregate production: 
+
+$$
+c_L+c_H=y_L+y_H.
+$$
+
+Given Walras' law, if the first two conditions are met, then the last market automatically clears.
+
+## g:
+
+$$
+\begin{aligned}
+\max_{\theta,c_L,c_H,n_L,n_H}\quad
+&u(c_L)-v(n_L)+u(c_H)-v(n_H)\\
+\text{s.t.}\quad
+&c_L=w_Ln_L-T(w_Ln_L;\theta),\\
+&c_H=w_Hn_H-T(w_Hn_H;\theta),\\
+&u'(c_L)w_L[1-T_y(w_Ln_L;\theta)]=v'(n_L),\\
+&u'(c_H)w_H[1-T_y(w_Hn_H;\theta)]=v'(n_H),\\
+&T(w_Ln_L;\theta)+T(w_Hn_H;\theta)=0,\\
+&c_L+c_H=w_Ln_L+w_Hn_H.
+\end{aligned}
+$$
+
+The constraints correspond to the definition of the TDCE in that they include the two household budget constraints, the two labor supply FOCs, the government budget balancing, and the goods market clearing.
+
+This implies that the planner can only implement allocations under a tax schedule from the specified family. For example, the linear Ramsey problem imposes the same marginal rate on both the high and low types.
+
+The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to determine the equilibrium levels for consumption $c_i(\theta)$, labor supply $n_i(\theta)$, and earnings $y_i(\theta)$, while balancing the government budget. Then, those equilibrium levels should be substituted into the welfare function, to choose the $\theta$ that maximizes social welfare.
+
 # Q1: Daniel
 
-# Q2
+# Q2 (David)
 
-# Q3
+# Q3 (Arun)
 
-# Q4
+# Q4 (Daniel)
 
 # Q5 (together)
-
