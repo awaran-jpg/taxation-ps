@@ -5,19 +5,24 @@ author: "Arun, David, and Daniel"
 date: today
 date-format: long
 format:
-  # html:
-  #   code-tools:
-  #     source: true
-  #     toggle: false
-  #     caption: none
-  #   toc: false
-  #   toc-depth: 2
-  #   embed-resources: true
   pdf:
     toc: false
     toc-depth: 2
     pdf-engine: xelatex
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        % tighter spacing around headings (Quarto's default class is KOMA scrartcl)
+        \ifdefined\RedeclareSectionCommand
+          \RedeclareSectionCommand[beforeskip=-1.5ex plus -.3ex, afterskip=.6ex plus .1ex]{section}
+          \RedeclareSectionCommand[beforeskip=-1.2ex plus -.2ex, afterskip=.4ex plus .1ex]{subsection}
+          \RedeclareSectionCommand[beforeskip=-1ex plus -.2ex, afterskip=.3ex plus .1ex]{subsubsection}
+        \fi
 ---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, error=FALSE)
+```
 
 # Question 1: David
 
@@ -41,44 +46,45 @@ $$
 \end{aligned}
 $$
 
-Like in class, after we combine these FOCS, we get the nice equations that MRS=MRT.
+Like in class, combining these FOCs gives MRS=MRT:
 
 $$
 \begin{aligned}
-\lambda = \lambda \quad &\rightarrow \quad u'(c_L)=u'(c_H) \\
-\lambda = \lambda \quad &\rightarrow \quad \frac{v'(n_l)}{w_l} = \frac{v'(n_h)}{w_h}
+\lambda = \lambda \quad &\rightarrow \quad u'(c_L)=u'(c_H)\ \rightarrow\ c_L=c_H \quad (u''<0) \\
+\lambda = \lambda \quad &\rightarrow \quad v'(n_H)=\lambda w_H>\lambda w_L=v'(n_L)\ \rightarrow\ n_H>n_L \quad (v''>0) \\
+\text{MRS}=\text{MRT}: \quad &\frac{v'(n_i)}{u'(c_i)}=w_i
 \end{aligned}
 $$
 
 Both types consume the same as per the first equation. High type has a higher wage given their higher productivity, and higher labor supply, thus their income is greater than the low-type. In this setting, the more productive type works more and earns more but consumes the same, so the high type is a net taxpayer and the low type a net recipient.
 
 ### b. 
-If you're the high-type, and you're more productive, and yet consuming the same of the low-type, then the high-type would choose the low-type bundle. The low-type will also choose the low-type bundle. This is a problem because if both agents pick $(c_L,y_L)$, then earnings fall, and the resource constraint is violated. The first best is not incentive compatible, which is why we need incentive constraints.
+If you're the high-type, and you're more productive, and yet consuming the same of the low-type, then the high-type would choose the low-type bundle. The low-type also stays as the high bundle is more hours, same consumption. This is a problem because if both agents pick $(c_L,y_L)$, then earnings fall, and the resource constraint is violated. The first best is not incentive compatible, which is why we need incentive constraints.
 
 ### c. 
 I'll put the planners max. problem in a nicer format, as the $1/2$ eventually goes away. 
 
 $$
 \begin{aligned}
-\max_{c_l,c_h, n_l, n_h}\ & \Big[u(c_L)-v\big(\tfrac{y_L}{w_L}\big)\Big]+\Big[u(c_H)-v\big(\tfrac{y_H}{w_H}\big)\Big]\\
+\max_{c_L,c_H,y_L,y_H}\ & \Big[u(c_L)-v\big(\tfrac{y_L}{w_L}\big)\Big]+\Big[u(c_H)-v\big(\tfrac{y_H}{w_H}\big)\Big]\\
 \text{s.t.}\ & c_L+c_H= y_L+y_H \\
 & v_H(c_H, y_H)\ = \ v_H(c_L,y_L) &&\text{(IC}_H), \\
 & v_L(c_L, y_L)\ > \ v_L(c_H,y_H) &&\text{(IC}_L)
 \end{aligned}
 $$
 
-The high-type IC says the high-type must prefer their bundle to mimicking the low-type. The low-type IC says the same for the low-type. These only rule out allocations, so the planner can't implement the first best as in part b where the high-type would mimic.
+The high-type IC says the high-type must prefer their bundle to mimicking the low-type. The low-type IC says the same for the low-type. The ICs shrink the feasible set; the first best falls outside it, as in part b where the high-type would mimic.
 
 At the separating optimum, the high-type IC binds, since the planner redistributes until the high-type is just indifferent to mimicking. The low-type IC is slack, since the low-type never wants the high-type's bundle (more hours at a lower wage). The resource constraint binds, since nothing is wasted.
 
 ### d. 
 In class we've stated the following conclusion:
 
-> 1. At an optimum, we can't take all resources from being productive. $V_H > V_L$. The planner can’t equalize utilities. Mimicking takes fewer hours, so that utility is always more than the low-type gets.
+> 1. At an optimum, we can't take all resources from being productive. $V_H > V_L$. The planner can’t equalize utilities. Mimicking takes fewer hours, so that utility is always more than the low-type gets. From binding IC$_H$: $V_H=u(c_L)-v(\tfrac{y_L}{w_H})>V_L$.
 
-> 2. At a planner efficient condition, we want the high-type to work as much as possible, so we don't distrubt their labor supply. We don’t distort the high-type’s labor supply, $T'(y_H)=0$. The high-type works the efficient amount (MRS=MRT). Taxing $y_H$ at the margin wouldn’t stop mimicking, so it would only cost efficiency. This doesn’t mean the high-type pays no taxes as their average tax is still positive.
+> 2. At a planner efficient condition, we want the high-type to work as much as possible, so we don't disturb their labor supply. We don’t distort the high-type’s labor supply, $T'(y_H)=0$. The high-type works the efficient amount (MRS=MRT). Taxing $y_H$ at the margin wouldn’t stop mimicking, so it would only cost efficiency. This doesn’t mean the high-type pays no taxes as their average tax is still positive. From the $(c_H,y_H)$ FOCs: $\frac{v'(n_H)}{u'(c_H)}=w_H$.
 
-> 3. We can have a marginal tax (T'(y_L)>0) to preserve incentives, so we can't make the low-type attractice so that the high-type does not end up mimicking the low-type. This relaxes the high-type IC and lets the planner redistribute more.
+> 3. We can have a marginal tax ($0<T'(y_L)<1$) to preserve incentives, so we can't make the low-type attractive so that the high-type does not end up mimicking the low-type. This relaxes the high-type IC and lets the planner redistribute more. From the IC$_H$ multiplier distorting $y_L$ down.
 
 ## Part B (Ramsey)
 
@@ -102,9 +108,12 @@ An extra hour now adds only $(1-T')w_i$ to consumption instead of $w_i$. The mar
 ### f. 
 Given $\theta$, a TDCE is an allocation $(c_i,n_i)_{i=H,L}$ and prices $(w_i)_{i=H,L}$ such that:
 
-1. HH optimize: given $\theta$ and $w_i$, $(c_i,n_i)$ solves $\max_{c_i,n_i}\ u(c_i)-v(n_i)$ s.t. $c_i=w_in_i-T(w_in_i;\theta)$, so the FOC in (e) holds for $i=L,H$.
+1. HH optimize: given $\theta$ and $w_i$, $(c_i,n_i)$ solves 
+
+$$\max_{c_i,n_i}\ u(c_i)-v(n_i) \quad \text{s.t.} \quad  c_i=w_in_i-T(w_in_i;\theta)$$
+
 2. Government budget balances: $\tfrac12T(y_L;\theta)+\tfrac12T(y_H;\theta)=0$. Linear: $B=\tau\bar y$, where $\bar y=\tfrac{y_L+y_H}{2}$.
-3. Goods market clears: $\tfrac{c_L+c_H}{2}=\bar y$. This is implied by 1 and 2 (Walras' law).
+3. Goods market clears: $\tfrac{c_L+c_H}{2}=\bar y$. (Walras' law).
 
 ### g. 
 Dropping the $1/2$ as in Part A:
@@ -399,9 +408,253 @@ The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to det
 
 ## Part A
 
+Assume throughout that $\theta=(\tau,B)$ and $T(y)=\tau y-B$, where $0\le\tau<1$ and $B\ge0$. Average income is $\bar y=p_Ly_L+p_Hy_H$.
+
+### a. Define the TDCE
+
+Given $(\tau,B)$, a TDCE is an allocation $(c_i,n_i)_{i=H,L}$ and prices $(w_i)_{i=H,L}$ s.t.:
+
+1. HH optimize: given $(\tau,B)$ and $w_i$, each HH solves
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\ &\ln c_i-\frac{n_i^2}{2}\quad\text{s.t.}\quad c_i=(1-\tau)w_in_i+B
+\end{aligned}
+$$
+
+2. Government budget balances: $p_LT(y_L)+p_HT(y_H)=0\ \rightarrow\ B=\tau\bar y=\tau\,(p_Lw_Ln_L+p_Hw_Hn_H)$.
+3. Goods market clears: $p_Lc_L+p_Hc_H=\bar y$. (Walras' law).
+
+### b. Solve the TDCE
+
+From the HH problem in (a): $[n_i]:\ \frac{(1-\tau)w_i}{c_i}=n_i$.
+
+Substituting this FOC into the budget constraint gives a quadratic in $c_i$:
+
+$$
+\begin{aligned}
+c_i=\frac{(1-\tau)^2w_i^2}{c_i}+B\quad&\rightarrow\quad c_i^2-Bc_i-(1-\tau)^2w_i^2=0 \\
+c_i=\frac{B+s_i}{2},\qquad n_i=\frac{s_i-B}{2(1-\tau)w_i},\qquad y_i&=w_in_i=\frac{s_i-B}{2(1-\tau)},\qquad s_i\equiv\sqrt{B^2+4(1-\tau)^2w_i^2}
+\end{aligned}
+$$
+
+taking the positive root. Substituting $y_i$ into the government budget:
+
+$$
+B=\tau\sum_i p_i\frac{s_i-B}{2(1-\tau)}\quad\rightarrow\quad (2-\tau)\,B=\tau\,(p_Ls_L+p_Hs_H)
+$$
+
+Squaring twice gives a quadratic in $B^2$:
+
+$$
+\begin{aligned}
+B(\tau)^2&=\frac{\tau^2(1-\tau)\Big[p_L^2w_L^2\big(2(1-\tau)+p_H\tau^2\big)+p_H^2w_H^2\big(2(1-\tau)+p_L\tau^2\big)+p_Lp_H(2-\tau)R\Big]}{2(1-p_L\tau)(1-p_H\tau)} \\
+R&\equiv\sqrt{\tau^2\big(p_Lw_L^2+p_Hw_H^2\big)^2+4(1-\tau)w_L^2w_H^2}
+\end{aligned}
+$$
+
+Substituting $B(\tau)$ into $s_i$ gives $c_i(\tau)$, $n_i(\tau)$, and $y_i(\tau)$ in closed form. Tax rates, holding $(\tau,B)$ fixed: $\text{ATR}(y)=\frac{T(y)}{y}=\tau-\frac{B}{y}, \quad \text{and} \quad \text{MTR}(y)=T'(y)=\tau$. The MTR is the same for both types. The ATR rises with $y$, and it is negative for low earners ($y<B/\tau$), who are net recipients.
+
+### c. Full Ramsey problem
+
+$$
+\begin{aligned}
+\max_{\tau,B,(c_i,n_i)_{i=L,H}}\ & p_L\alpha_L\Big[\ln c_L-\frac{n_L^2}{2}\Big]+p_H\alpha_H\Big[\ln c_H-\frac{n_H^2}{2}\Big] \\
+\text{s.t.}\ & \frac{(1-\tau)w_i}{c_i}=n_i, && i=L,H \\
+& c_i=(1-\tau)w_in_i+B, && i=L,H \\
+& B=\tau\,(p_Lw_Ln_L+p_Hw_Hn_H) \\
+& p_Lc_L+p_Hc_H=p_Lw_Ln_L+p_Hw_Hn_H \\
+& 0\le\tau<1,\quad B\ge0
+\end{aligned}
+$$
+
+### d. Reduce the Ramsey problem
+
+For any $\tau$, the functions $c_i(\tau)$, $n_i(\tau)$, and $B(\tau)$ from (b) satisfy every constraint in (c). Substituting them in leaves one choice variable:
+
+$$
+\max_{\tau}\ W(\tau)=p_L\alpha_L\Big[\ln c_L(\tau)-\frac{n_L(\tau)^2}{2}\Big]+p_H\alpha_H\Big[\ln c_H(\tau)-\frac{n_H(\tau)^2}{2}\Big]
+$$
+
+- Population shares $p_i$ enter as population weights in $W$, and through the government budget $B=\tau\bar y$.
+- Welfare weights $\alpha_i$ enter only the objective. They do not affect the TDCE.
+
 ## Part B
 
-\newpage
+### e. Implement 50/50
+
+> Why do the two types prefer different policies?
+
+The high type is a net taxpayer, so any $t>0$ costs them more in taxes than they get back in $B$, and it distorts their hours. They prefer $t=0$. The low type is a net recipient, so a higher $t$ raises their transfer. They keep wanting more $t$ until the shrinking tax base (both types work less) makes $B$ grow too slowly to offset their own distortion, at $t=0.599$.
+
+> Which welfare weights would lead the planner to choose each type’s preferred policy?
+
+The planner would pick the low-type if all the weight on the low type, $(\alpha_L,\alpha_H)=(1,0)$. The high type's policy ($t=0$) is a corner. At $t=0$, $n_i=1$ and $c_i=w_i$, so a small tax helps $L$ three times as much as it hurts $H$. The planner stays at $t^*=0$ only if $\alpha_H\ge 3\alpha_L$, i.e. $\alpha_H\ge 3/4$.
+
+
+```{r}
+#| label: q2-setup
+#| message: false
+library(ggplot2)
+
+# B solves the government budget
+tdce_linear <- function(tau, wL, wH, pL, pH) {
+  w   <- c(L = wL, H = wH)
+  s   <- function(B, w) sqrt(B^2 + 4 * (1 - tau)^2 * w^2)
+  gbc <- function(B) (2 - tau) * B - tau * (pL * s(B, wL) + pH * s(B, wH))
+  B   <- if (tau == 0) 0 else uniroot(gbc, c(0, 100 * wH), tol = 1e-12)$root
+  c_i <- (B + s(B, w)) / 2
+  n_i <- (s(B, w) - B) / (2 * (1 - tau) * w)
+  y_i <- w * n_i
+  V_i <- log(c_i) - n_i^2 / 2
+  data.frame(tau = tau, B = B,
+             nL = n_i[["L"]], nH = n_i[["H"]],
+             yL = y_i[["L"]], yH = y_i[["H"]],
+             cL = c_i[["L"]], cH = c_i[["H"]],
+             VL = V_i[["L"]], VH = V_i[["H"]],
+             ybar = pL * y_i[["L"]] + pH * y_i[["H"]])
+}
+
+# Solve the TDCE on a grid of tau
+solve_grid <- function(wL, wH, pL, pH, aL, aH, grid = seq(0, 0.99, by = 0.001)) {
+  out   <- do.call(rbind, lapply(grid, tdce_linear, wL = wL, wH = wH, pL = pL, pH = pH))
+  out$W <- pL * aL * out$VL + pH * aH * out$VH
+  out
+}
+
+argmax <- function(df, col) df[which.max(df[[col]]), ]
+```
+
+```{r}
+#| label: q2-benchmark
+#| results: asis
+bench <- solve_grid(wL = 1, wH = 3, pL = 0.5, pH = 0.5, aL = 0.5, aH = 0.5)
+
+objs  <- c(W = "W", V_L = "VL", V_H = "VH")
+tab_e <- data.frame(
+  Objective = names(objs),
+  t = sapply(objs, function(v) argmax(bench, v)$tau),
+  B = sapply(objs, function(v) argmax(bench, v)$B)
+)
+
+# Optimal policy and allocation, saved for the Question 5 comparison table
+q2_opt <- transform(argmax(bench, "W"),
+                    ATR_L = tau - B / yL, ATR_H = tau - B / yH,
+                    MTR_L = tau,          MTR_H = tau)
+
+# tables
+tab_left <- knitr::kable(
+  data.frame(Objective = c("$W$", "$V_L$", "$V_H$"), t = tab_e$t, B = tab_e$B),
+  format = "latex", booktabs = TRUE, escape = FALSE, digits = 3, row.names = FALSE,
+  col.names = c("Obj. Max.", "$t$", "$B$"))
+
+labs16 <- c("$t$", "$B$", "$n_L$", "$n_H$", "$y_L$", "$y_H$", "$c_L$", "$c_H$",
+            "$V_L$", "$V_H$", "$\\bar y$", "$W$",
+            "ATR$_L$", "ATR$_H$", "MTR$_L$", "MTR$_H$")
+grid16 <- matrix(c(rbind(labs16, sprintf("%.3f", unlist(q2_opt)))),
+                 nrow = 4, byrow = TRUE)
+tab_right <- knitr::kable(grid16, format = "latex", booktabs = TRUE, escape = FALSE,
+                          align = rep(c("l", "r"), 4),
+                          col.names = rep(c("", "Value"), 4))
+
+cat("\\begin{center}\\footnotesize",
+    "\\begin{minipage}[t]{0.30\\linewidth}\\centering",
+    "\\textbf{Maximizers}\\\\[2pt]", tab_left, "\\end{minipage}\\hfill",
+    "\\begin{minipage}[t]{0.66\\linewidth}\\centering",
+    "\\textbf{Benchmark optimum (max $W$)}\\\\[2pt]", tab_right, "\\end{minipage}",
+    "\\end{center}", sep = "\n")
+```
+
+```{r, fig.height=2.5}
+#| label: fig-q2-benchmark
+#| fig-cap: "Welfare and type utilities against the flat rate $t$, 50/50 benchmark."
+long <- rbind(
+  data.frame(tau = bench$tau, value = bench$W,  curve = "W"),
+  data.frame(tau = bench$tau, value = bench$VL, curve = "V_L"),
+  data.frame(tau = bench$tau, value = bench$VH, curve = "V_H")
+)
+maxes <- do.call(rbind, lapply(split(long, long$curve),
+                               function(d) d[which.max(d$value), ]))
+
+ggplot(long, aes(tau, value, colour = curve)) +
+  geom_line() +
+  geom_point(data = maxes) +
+  geom_text(data = maxes, aes(label = sprintf("%s max: t = %.3f", curve, tau)),
+            vjust = 1.7, hjust = 0, size = 3, show.legend = FALSE) +
+  scale_color_viridis_d(option = "D") +
+  labs(x = "t", y = "Welfare / utility", colour = NULL) +
+  theme_minimal()
+```
+
+## Part C
+
+```{r}
+#| label: q2-opt-case
+# Optimal t for one economy
+opt_case <- function(wL, wH, pL, pH, aL, aH) {
+  r <- argmax(solve_grid(wL, wH, pL, pH, aL, aH), "W")
+  data.frame(t = r$tau, B = r$B, ybar = r$ybar, W = r$W)
+}
+```
+
+```{r}
+#| label: q2-fg
+cases_fg <- data.frame(
+  Case = c("Benchmark", "(f) Welfare weights", "(g) Population"),
+  pL = c(1/2, 1/2, 2/3), pH = c(1/2, 1/2, 1/3),
+  aL = c(1/2, 2/3, 1/2), aH = c(1/2, 1/3, 1/2)
+)
+res_fg <- cbind(Case = cases_fg$Case,
+                do.call(rbind, Map(opt_case, 1, 3, cases_fg$pL, cases_fg$pH,
+                                   cases_fg$aL, cases_fg$aH)))
+knitr::kable(res_fg, digits = 3, row.names = FALSE,
+             col.names = c("Case", "$t^*$", "$B^*$", "$\\bar y^*$", "$W^*$"))
+```
+
+### f. Change the planner's preferences
+
+$t^*$ rises from 0.333 to 0.454, and $B^*$ from 0.547 to 0.680. The planner now cares more about the low type, who is the net recipient, so it accepts more distortion (hours fall and $\bar y^*$ drops from 1.644 to 1.498) in exchange for a bigger transfer.
+
+### g. Change the population
+
+$t^*$ is roughly unchanged (0.329 vs 0.333), but $B^*$ falls from 0.547 to 0.452 and $\bar y^*$ from 1.644 to 1.373. With fewer high types, the same rate raises less revenue per person.
+
+### h. Same welfare objective, different populations
+
+No. Both planners maximize the same obj. function, but $t^*=0.454$ in f and $0.329$ in part g. The difference comes from the government budget, $B=t\bar y=t\,(p_Ly_L+p_Hy_H)$. In f, half the population are high earners, so each point of $t$ funds a large $B$. In g, only a third are high earners, and the transfer goes to everyone, including the $2/3$ who are low types. So a higher $t$ mostly taxes low types' own earnings back to them. Redistribution costs more, so $t$ is lower; $p_i$ enters the budget, $\alpha_i$ doesn't.
+
+### i. A higher wage for a smaller group
+
+```{r}
+#| label: q2-i
+cases_i <- data.frame(
+  Case = c("Benchmark", "95/5: wage only", "95/5: share only", "95/5: both",
+           "99/1: wage only", "99/1: share only", "99/1: both"),
+  wH = c(3, 5, 3, 5, 20, 3, 20),
+  pL = c(0.50, 0.50, 0.95, 0.95, 0.50, 0.99, 0.99)
+)
+cases_i$pH <- 1 - cases_i$pL
+res_i <- cbind(cases_i,
+               do.call(rbind, Map(opt_case, 1, cases_i$wH, cases_i$pL, cases_i$pH,
+                                  1/2, 1/2)))
+knitr::kable(res_i, digits = 3, row.names = FALSE,
+             col.names = c("Case", "$w_H$", "$p_L$", "$p_H$",
+                           "$t^*$", "$B^*$", "$\\bar y^*$", "$W^*$"))
+```
+
+> For each split, explain the wage-only and share-only results relative to the benchmark.
+
+- Wage only: $t^*$ rises (0.461 for 95/5, 0.553 for 99/1). The wage gap is wider and half the population is now very productive, more taxes implies bigger $B$. Planner taxes more.
+- Share only: $t^*$ falls (0.110 for 95/5, 0.026 for 99/1). There are few high types to tax, so a higher $t$ mostly taxes the low types and hands it back to them. Planner taxes less.
+
+> Use the wage-only and share-only optimal outcomes to explain the combined result.
+
+Both: $t^*=0.228$ (95/5) and $0.264$ (99/1), between the two single changes. The share effect pulls $t^*$ down, since the rich are too few to fund much. The wage effect pulls it back up, since those few earn a lot (at 99/1, $y_H^*\approx 20$, so 1% of people still make up about a fifth of $\bar y$). The combined $t^*$ is still below the benchmark, so the share effect dominates.
+
+> Which change has the larger effect on $t^*$?
+
+The share change. Relative to the benchmark, it lowers $t^*$ by 0.22 (95/5) and 0.31 (99/1), while the wage change raises it by 0.13 and 0.22. What matters for the planner is how much revenue the high type provides, $p_Hy_H$.
+
 
 # Q3 (Arun)
 
