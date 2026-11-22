@@ -5,21 +5,81 @@ author: "Arun, David, and Daniel"
 date: today
 date-format: long
 format:
-  html:
-    code-tools:
-      source: true
-      toggle: false
-      caption: none
-    toc: false
-    toc-depth: 2
-    embed-resources: true
+  # html:
+  #   code-tools:
+  #     source: true
+  #     toggle: false
+  #     caption: none
+  #   toc: false
+  #   toc-depth: 2
+  #   embed-resources: true
   pdf:
     toc: false
     toc-depth: 2
     pdf-engine: xelatex
 ---
 
-# Q1: David
+# Question 1: David
+
+## Part A
+
+a. The planner solves:
+
+$$ 
+\max_{c_L,c_H,y_L,y_H}\ \tfrac12\Big[u(c_L)-v\big(\tfrac{y_L}{w_L}\big)\Big]+\tfrac12\Big[u(c_H)-v\big(\tfrac{y_H}{w_H}\big)\Big]\quad\text{s.t.}\quad \tfrac12 c_L+\tfrac12 c_H \le \tfrac12 y_L+\tfrac12 y_H .
+$$
+
+FOCS:
+
+$$
+\begin{aligned}
+[c_l]:&\quad \tfrac12 u'(c_l)-\tfrac12\lambda=0 &&\rightarrow\quad u'(c_l)=\lambda \\
+[y_l]:&\quad -\tfrac12\,\frac{v'(y_l/w_l)}{w_l}+\tfrac12\lambda=0 &&\rightarrow\quad \frac{v'(y_l/w_l)}{w_l} = \lambda \\
+[c_h]:&\quad \tfrac12 u'(c_h)-\tfrac12\lambda=0 &&\rightarrow\quad u'(c_h)=\lambda \\
+[y_h]:&\quad -\tfrac12\,\frac{v'(y_h/w_h)}{w_h}+\tfrac12\lambda=0 &&\rightarrow\quad \frac{v'(y_h/w_h)}{w_h} = \lambda \\
+[\lambda]:&\quad y_l + y_h - c_l - c_h = 0
+\end{aligned}
+$$
+
+Like in class, after we combine these FOCS, we get the nice equations that MRS=MRT.
+
+$$
+\begin{aligned}
+\lambda = \lambda \quad &\rightarrow \quad u'(c_L)=u'(c_H) \\
+\lambda = \lambda \quad &\rightarrow \quad \frac{v'(n_l)}{w_l} = \frac{v'(n_h)}{w_h}
+\end{aligned}
+$$
+
+Both types consume the same as per the first equation. High type has a higher wage given their higher productivity, and higher labor supply, thus their income is greater than the low-type. In this setting, the more productive type works more and earns more but consumes the same, so the high type is a net taxpayer and the low type a net recipient.
+
+b. If you're the high-type, and you're more productive, and yet consuming the same of the low-type, then the high-type would choose the low-type bundle. The low-type will also choose the low-type bundle. This is a problem because if both agents pick $(c_L,y_L)$, then earnings fall, and the resource constraint is violated. The first best is not incentive compatible, which is why we need incentive constraints.
+
+c. I'll put the planners max. problem in a nicer format, as the $1/2$ eventually goes away. 
+
+$$
+\begin{aligned}
+\max_{c_l,c_h, n_l, n_h}\ & \Big[u(c_L)-v\big(\tfrac{y_L}{w_L}\big)\Big]+\Big[u(c_H)-v\big(\tfrac{y_H}{w_H}\big)\Big]\\
+\text{s.t.}\ & c_L+c_H= y_L+y_H \\
+& v_H(c_H, y_H)\ = \ v_H(c_L,y_L) &&\text{(IC}_H), \\
+& v_L(c_L, y_L)\ > \ v_L(c_H,y_H) &&\text{(IC}_L)
+\end{aligned}
+$$
+
+The high-type IC says the high-type must prefer their bundle to mimicking the low-type. The low-type IC says the same for the low-type. These only rule out allocations, so the planner can't implement the first best as in part b where the high-type would mimic.
+
+At the separating optimum, the high-type IC binds, since the planner redistributes until the high-type is just indifferent to mimicking. The low-type IC is slack, since the low-type never wants the high-type's bundle (more hours at a lower wage). The resource constraint binds, since nothing is wasted.
+
+d. In class we've stated the following conclusion:
+
+> 1. At an optimum, we can't take all resources from being productive. $V_H > V_L$. The planner can’t equalize utilities. Mimicking takes fewer hours, so that utility is always more than the low-type gets.
+
+> 2. At a planner efficient condition, we want the high-type to work as much as possible, so we don't distrubt their labor supply. We don’t distort the high-type’s labor supply, $T'(y_H)=0$. The high-type works the efficient amount (MRS=MRT). Taxing $y_H$ at the margin wouldn’t stop mimicking, so it would only cost efficiency. This doesn’t mean the high-type pays no taxes as their average tax is still positive.
+
+> 3. We can have a marginal tax (T'(y_L)>0) to preserve incentives, so we can't make the low-type attractice so that the high-type does not end up mimicking the low-type. This relaxes the high-type IC and lets the planner redistribute more.
+
+## Part B
+
+
 
 # Q1: Arun
 
