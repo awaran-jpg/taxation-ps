@@ -395,7 +395,13 @@ The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to det
 
 \newpage
 
-# Q2 (David)
+# Q2 Linear Taxation
+
+## Part A
+
+## Part B
+
+\newpage
 
 # Q3 (Arun)
 
