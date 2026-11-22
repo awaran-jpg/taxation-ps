@@ -399,6 +399,25 @@ The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to det
 \newpage
 
 # Q1: Daniel
+a)
+$$
+\max_{c_h, c_l, n_h, n_l} \frac{1}{2}(u(c_h)-v(n_h))+\frac{1}{2}(u(c_l)  -n(n_l)) \\
+\text{Subject to:}\\
+c_h +c_l= w_h n_h + w_ln_l\\
+\text{Which yields FOCS:} \\
+c_h: u'(c_h) -\lambda = 0 \\
+c_l: u'(c_l) - \lambda = 0 \\
+n_l: -v'(n_l) + \lambda w_l = 0 \\
+n_h: -v'(n_h) + \lambda w_h = 0 \\
+$$
+It follows that the planner's first best solution occurs when $c_h = c_n$, and 
+$$
+\frac{w_h}{w_l} = \frac{v'(n_h)}{v'(n_l)} > 1
+$$
+which implies that the marginal dis-utility of labor is larger for the high type. It follows that the high type provides more labor than the low type at the first best solution, and thus has lower utility.
+
+b)
+
 
 
 
