@@ -23,7 +23,7 @@ format:
 
 ## Part A (Mirrlees)
 
-a. The planner solves:
+### a. The planner solves:
 
 $$ 
 \max_{c_L,c_H,y_L,y_H}\ \tfrac12\Big[u(c_L)-v\big(\tfrac{y_L}{w_L}\big)\Big]+\tfrac12\Big[u(c_H)-v\big(\tfrac{y_H}{w_H}\big)\Big]\quad\text{s.t.}\quad \tfrac12 c_L+\tfrac12 c_H \le \tfrac12 y_L+\tfrac12 y_H .
@@ -52,9 +52,11 @@ $$
 
 Both types consume the same as per the first equation. High type has a higher wage given their higher productivity, and higher labor supply, thus their income is greater than the low-type. In this setting, the more productive type works more and earns more but consumes the same, so the high type is a net taxpayer and the low type a net recipient.
 
-b. If you're the high-type, and you're more productive, and yet consuming the same of the low-type, then the high-type would choose the low-type bundle. The low-type will also choose the low-type bundle. This is a problem because if both agents pick $(c_L,y_L)$, then earnings fall, and the resource constraint is violated. The first best is not incentive compatible, which is why we need incentive constraints.
+### b. 
+If you're the high-type, and you're more productive, and yet consuming the same of the low-type, then the high-type would choose the low-type bundle. The low-type will also choose the low-type bundle. This is a problem because if both agents pick $(c_L,y_L)$, then earnings fall, and the resource constraint is violated. The first best is not incentive compatible, which is why we need incentive constraints.
 
-c. I'll put the planners max. problem in a nicer format, as the $1/2$ eventually goes away. 
+### c. 
+I'll put the planners max. problem in a nicer format, as the $1/2$ eventually goes away. 
 
 $$
 \begin{aligned}
@@ -69,7 +71,8 @@ The high-type IC says the high-type must prefer their bundle to mimicking the lo
 
 At the separating optimum, the high-type IC binds, since the planner redistributes until the high-type is just indifferent to mimicking. The low-type IC is slack, since the low-type never wants the high-type's bundle (more hours at a lower wage). The resource constraint binds, since nothing is wasted.
 
-d. In class we've stated the following conclusion:
+### d. 
+In class we've stated the following conclusion:
 
 > 1. At an optimum, we can't take all resources from being productive. $V_H > V_L$. The planner can’t equalize utilities. Mimicking takes fewer hours, so that utility is always more than the low-type gets.
 
@@ -78,6 +81,55 @@ d. In class we've stated the following conclusion:
 > 3. We can have a marginal tax (T'(y_L)>0) to preserve incentives, so we can't make the low-type attractice so that the high-type does not end up mimicking the low-type. This relaxes the high-type IC and lets the planner redistribute more.
 
 ## Part B (Ramsey)
+
+Same setup as Part A. With the linear schedule, $\theta=(\tau,B)$ and $T(y;\theta)=\tau y-B$, where $0\le\tau<1$ and $B\ge 0$.
+
+### e. 
+Given $\theta$ and $w_i$, type $i$ solves: $\max_{c_i,n_i}u(c_i)-v(n_i)\quad\text{s.t.}\quad c_i=w_in_i-T(w_in_i;\theta)$
+
+Substituting in for $c_i$ and taking the FOC:
+
+$$
+\begin{aligned}
+&\max_{n_i}\ u\big(w_in_i-T(w_in_i;\theta)\big)-v(n_i) \\
+[n_i]:\quad &\big(1-T'(y_i;\theta)\big)\,w_i\,u'(c_i)=v'(n_i)\quad\rightarrow\quad \frac{v'(n_i)}{u'(c_i)}=\big(1-T'(y_i;\theta)\big)w_i \\
+\text{linear:}\quad &(1-\tau)\,w_i\,u'\big((1-\tau)w_in_i+B\big)=v'(n_i)
+\end{aligned}
+$$
+
+An extra hour now adds only $(1-T')w_i$ to consumption instead of $w_i$. The marginal tax rate puts a wedge between the MRS and the MRT ($w_i$), so with $T'>0$ the household works less than at the first best. $B$ does not change the reward to the marginal hour; it acts only through an income effect in $u'(c_i)$. With the linear schedule, both types face the same wedge $\tau$.
+
+### f. 
+Given $\theta$, a TDCE is an allocation $(c_i,n_i)_{i=H,L}$ and prices $(w_i)_{i=H,L}$ such that:
+
+1. HH optimize: given $\theta$ and $w_i$, $(c_i,n_i)$ solves $\max_{c_i,n_i}\ u(c_i)-v(n_i)$ s.t. $c_i=w_in_i-T(w_in_i;\theta)$, so the FOC in (e) holds for $i=L,H$.
+2. Government budget balances: $\tfrac12T(y_L;\theta)+\tfrac12T(y_H;\theta)=0$. Linear: $B=\tau\bar y$, where $\bar y=\tfrac{y_L+y_H}{2}$.
+3. Goods market clears: $\tfrac{c_L+c_H}{2}=\bar y$. This is implied by 1 and 2 (Walras' law).
+
+### g. 
+Dropping the $1/2$ as in Part A:
+
+$$
+\begin{aligned}
+\max_{\theta,\,(c_i,n_i)_{i=L,H}}\ & \big[u(c_L)-v(n_L)\big]+\big[u(c_H)-v(n_H)\big] \\
+\text{s.t.}\ & \big(1-T'(w_in_i;\theta)\big)\,w_i\,u'(c_i)=v'(n_i), && i=L,H \\
+& c_i=w_in_i-T(w_in_i;\theta), && i=L,H \\
+& \tfrac12T(y_L;\theta)+\tfrac12T(y_H;\theta)=0 \\
+& \tfrac{c_L+c_H}{2}=\bar y \\
+& 0\le\tau<1,\quad B\ge 0 &&\text{(linear case)}
+\end{aligned}
+$$
+
+The constraints are exactly the TDCE conditions from (f), so the planner can only implement allocations that are a TDCE for some $\theta$ in the family. Incentive compatibility is automatic, since each type chooses $n_i$ itself, but the implementable set is smaller than in Mirrlees. With one flat rate, the planner cannot set $T'(y_H)=0$ and $T'(y_L)>0$ at the same time, so Ramsey welfare is at most Mirrlees welfare.
+
+How would I solve the problem: 
+I'd first fix $\theta$ and solve the TDCE for $n_i(\theta)$, $y_i(\theta)=w_in_i(\theta)$, and $c_i(\theta)=y_i(\theta)-T(y_i(\theta);\theta)$, using the government budget to pin down the transfer. Linear: $B(\tau)=\tau\bar y(\tau)$, so $c_i(\tau)=(1-\tau)w_in_i(\tau)+\tau\bar y(\tau)$.
+Then, I'd substitute these equilibrium functions into welfare and choose $\theta$:
+
+$$
+\max_{\tau}\ W(\tau)=\sum_{i\in\{L,H\}}\Big[u\big(c_i(\tau)\big)-v\big(n_i(\tau)\big)\Big]\quad\rightarrow\quad W'(\tau^*)=0
+$$
+
 
 
 
