@@ -297,13 +297,13 @@ $$
 2. No distortion at the top. The high type faces a zero marginal income tax rate, so additional earnings are not taxed at the margin. This follows from the optimality conditions. Distorting the high-type labor does not relax the high-type incentive constraint.
 
 $$
-\boxed{T'(y_H^*)=0.}
+T'(y_H^*)=0.
 $$
 
 3. Positive marginal taxation at the bottom. This happens because the high-type incentive constraint binds. Reducing the low type's earnings makes the bundle less attractive to high-productivity workers who might take the low type. This allows for more redistribution.
 
 $$
-\boxed{0<T'(y_L^*)<1.}
+0<T'(y_L^*)<1.
 $$
 
 ## Part B: Ramsey taxation
@@ -983,3 +983,40 @@ answer
 
 
 # Q5 (together)
+
+### a:
+
+\begin{center}
+\scriptsize
+\begin{tabular}{llrrrrrrrrr}
+\hline
+Policy & Type & $n_i$ & $y_i$ & $c_i$ & $T_i$ & ATR & MTR & $V_i$ & $W$ & $g_i$ (\%) \\
+\hline
+No tax & $L$ & 1.0000 & 1.0000 & 1.0000 & 0 & 0\% & 0\% & -0.500000 & 0.024653 & 0.00 \\
+       & $H$ & 1.0000 & 3.0000 & 3.0000 & 0 & 0\% & 0\% & 0.598612 & & 0.00 \\
+\hline
+Linear & $L$ & & & & & & & & & \\
+       & $H$ & & & & & & & & & \\
+\hline
+HSV & $L$ & 0.8426 & 0.8426 & 1.0594 & -0.2168 & -25.73\% & 10.73\% & -0.297305 & 0.046351 & 22.47 \\
+    & $H$ & 0.8426 & 2.5278 & 2.3111 & 0.2168 & 8.58\% & 35.09\% & 0.482710 & & -10.94 \\
+\hline
+Mirrlees & $L$ & & & & & & & & & \\
+         & $H$ & & & & & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{lcc}
+Policy & $\bar{y}$ & Change from no tax (\%) \\
+\hline
+No tax & 2.000000 & 0.00 \\
+Linear & & \\
+HSV & 1.685230 & -15.74 \\
+Mirrlees & & \\
+\end{tabular}
+\end{center}
+
+
