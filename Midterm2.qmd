@@ -156,16 +156,18 @@ $$
 
 ### a:
 
+
 $$
 \begin{aligned}
-\max_{c_L,c_H,y_L,y_H} \quad
-& u(c_L)+u(c_H)
--v\left(\frac{y_L}{w_L}\right)
--v\left(\frac{y_H}{w_H}\right) \\
-\text{s.t.} \quad
-& c_L+c_H=y_L+y_H.
+\max_{c_L,c_H,y_L,y_H}\quad
+&\frac12\left[u(c_L)-v\left(\frac{y_L}{w_L}\right)\right]
++\frac12\left[u(c_H)-v\left(\frac{y_H}{w_H}\right)\right]\\
+\text{s.t.}\quad
+&\frac12(c_L+c_H)\leq\frac12(y_L+y_H).
 \end{aligned}
 $$
+
+Because $u'>0$, the resource constraint binds at the optimum. Multiplying the objective and resource constraint by two cleans the problem up as well. Using this, the Lagrangian is:
 
 $$
 \begin{aligned}
@@ -228,18 +230,19 @@ $$
 v'(n_H)>v'(n_L).
 $$
 
-Because $v''>0$, marginal disutility of labor is strictly increasing, so $n_H>n_L$. Therefore, we can say that:
+Because $v''>0$, marginal disutility of labor is strictly increasing, so $n_H>n_L$. Because the high type has higher productivity and labor supply, their earning will also be greater:
 
 $$
-y_H>y_L
+y_H=w_Hn_H>w_Ln_L=y_L.
 $$
 
 We can combine the consumption and earnings FOCs to get:
 
 $$
-\frac{v'(y_i/w_i)}{w_i}=u'(c_i).
-\\\\
-\frac{v'(n_i)}{u'(c_i)}=w_i.
+\begin{aligned}
+\frac{v'(y_i/w_i)}{w_i}&=u'(c_i),\\
+\frac{v'(n_i)}{u'(c_i)}&=w_i.
+\end{aligned}
 $$
 
 Via this, we have that the marginal rate of substitution equals the marginal rate of transformation, so the first-best efficiency condition is satisfied.
@@ -249,14 +252,18 @@ Since $c_H=c_L=\bar{c}$, net taxes for each type are:
 $$
 t_i=y_i^*-\bar{c}.
 $$
-Since $y_H^*>y_L^*$, we have $t_H>0$ and $t_L<0$. So, there is redistribution from the high-productivity to the low-productivity workers.
+
+$$
+\bar{c}=\frac{y_L^*+y_H^*}{2}.
+$$
+
+Since $y_H^*>y_L^*$, we have $y_L^*<\bar{c}<y_H^*$, implying $t_H>0$ and $t_L<0$. So, there is redistribution from the high-productivity to the low-productivity workers.
 
 ### b:
 
-For the low-productivity worker, since $y_h>y_L$, choosing the high-type bundle would require more labor without any additional consumption, so they choose the low-type bundle. The utility functions are identical, so the high-productivity worker would do the same.
+Since $c_H=c_L=\bar{c}$ and $y_H>y_L$, the low-productivity worker prefers the low-type bundle, since choosing the high-type bundle would require more labor without any additional consumption. The high-productivity worker would also prefer the low-type bundle, as they can have the same consumption with less labor.
 
 ### c:
-
 
 $$
 \begin{aligned}
@@ -265,18 +272,17 @@ $$
 -v(y_L/w_L)-v(y_H/w_H)\\
 \text{s.t.}\quad
 &c_L+c_H=y_L+y_H,\\
-\quad
 &u(c_H)-v(y_H/w_H)
-= u(c_L)-v(y_L/w_H), \quad \text{(IC-H)} \\
-\quad
+\geq u(c_L)-v(y_L/w_H), \quad \text{(IC-H)}\\
 &u(c_L)-v(y_L/w_L)
-> u(c_H)-v(y_H/w_L). \quad \text{(IC-L)}
+\geq u(c_H)-v(y_H/w_L), \quad \text{(IC-L)}
 \end{aligned}
 $$
 
-These conditions require the workers to prefer their intended bundles (the high-productivity worker prefers the high-type bundle, and vice versa). These constraints restrict the feasible allocations to those under which neither type wants the other's bundle. The planner cannot implement the first-best allocation because both types would choose the low-type bundle.
 
-At the separating optimum, the high-productivity constraint binds, while the low-productivity constraint is slack. The former holds with equality, while the latter holds with strict inequality.
+These conditions require the workers to prefer their intended bundles (the high-productivity worker prefers the IC-H, and vice versa). These constraints restrict the feasible allocations to those under which neither type wants the other's bundle. The planner cannot implement the first-best allocation because both types would choose the low-type bundle.
+
+At the separating optimum, the IC-H binds because the planner redistributes until the high type is indifferent between bundles. IC-L is slack because the wages remain the same under the high-type bundle, so the low-productivity worker will not want to contribute more labor for no reward. The resource constraint also binds.
 
 ### d:
 
@@ -313,7 +319,7 @@ $$
 \end{aligned}
 $$
 
-The FOC for $n_i$ is:
+Substituting the budget constraint into utility and taking the FOC for $n_i$ gives:
 
 $$
 u'(c_i)w_i[1-T_y(y_i;\theta)]-v'(n_i)=0.
@@ -335,19 +341,19 @@ $$
 \end{aligned}
 $$
 
-The FOC under the above method simplifies to:
+The FOC under the linear schedule simplifies to:
 
 $$
 \frac{v'(n_i)}{u'(c_i)}=w_i(1-t).
 $$
 
-An additional hour of work will increase earnings by $w_i$, but sets after-tax consumption to $w_i(1-t)$.
+An additional hour of work will increase earnings by $w_i$, but increases after-tax consumption to $w_i(1-t)$.
 
-So, the tax schedule will reduce the utility gotten from an additional hour of work, and create a wedge between the MRS and productivity. The first-best condition is not met unless the marginal tax rate is zero.
+So, a positive marginal tax rate will reduce the reward gotten from an additional hour of work, and create a wedge between the MRS and productivity. The first-best condition is not met unless the marginal tax rate is zero. The transfer $B$ does not directly change the marginal reward for labor.
 
 ## f:
 
-For the tax schedule $T(y;\theta)$ consists of allocations $(c_i,n_i,y_i)$ for each type $i\in\{L,H\}$ such that:
+For the tax schedule $T(y;\theta)$, a TDCE consists of allocations $(c_i,n_i,y_i)$ for each type $i\in\{L,H\}$, with $y_i=w_i n_i$, such that:
 
 1. Households optimize. They do so according to:
 
@@ -363,7 +369,7 @@ $$
 2. The government budget balances. As the government does not make purchases, the aggregate net tax revenue must equal zero:
 
 $$
-T(y_L;\theta)+T(y_H;\theta)=0.
+\frac12T(y_L;\theta)+\frac12T(y_H;\theta)=0.
 $$
 
 3. The goods market clears. Aggregate consumption must equal aggregate production: 
@@ -385,14 +391,16 @@ $$
 &c_H=w_Hn_H-T(w_Hn_H;\theta),\\
 &u'(c_L)w_L[1-T_y(w_Ln_L;\theta)]=v'(n_L),\\
 &u'(c_H)w_H[1-T_y(w_Hn_H;\theta)]=v'(n_H),\\
-&T(w_Ln_L;\theta)+T(w_Hn_H;\theta)=0,\\
-&c_L+c_H=w_Ln_L+w_Hn_H.
+&\frac12 T(w_Ln_L;\theta)
++\frac12 T(w_Hn_H;\theta)=0,\\
+&\frac12(c_L+c_H)
+=\frac12(w_Ln_L+w_Hn_H).
 \end{aligned}
 $$
 
 The constraints correspond to the definition of the TDCE in that they include the two household budget constraints, the two labor supply FOCs, the government budget balancing, and the goods market clearing.
 
-This implies that the planner can only implement allocations under a tax schedule from the specified family. For example, the linear Ramsey problem imposes the same marginal rate on both the high and low types.
+This implies that the planner can only implement allocations under a tax schedule from the specified family. For example, the linear Ramsey problem imposes the same marginal rate on both the high and low types so it cannot implement the Mirrlees optimum.
 
 The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to determine the equilibrium levels for consumption $c_i(\theta)$, labor supply $n_i(\theta)$, and earnings $y_i(\theta)$, while balancing the government budget. Then, those equilibrium levels should be substituted into the welfare function, to choose the $\theta$ that maximizes social welfare.
 
@@ -687,6 +695,166 @@ The share change. Relative to the benchmark, it lowers $t^*$ by 0.22 (95/5) and 
 
 
 # Q3 (Arun)
+
+### a:
+
+For the HSV tax schedule $T(y)=y-\lambda y^{1-\tau}$, a TDCE consists of allocations $(c_i,n_i,y_i)$ for each type $i\in\{L,H\}$, with $y_i=w_i n_i$, such that:
+
+1. Households optimize. They do so according to:
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&\ln(c_i)-\frac{n_i^2}{2}\\
+\text{s.t.}\quad
+&c_i=\lambda(w_i n_i)^{1-\tau}.
+\end{aligned}
+$$
+
+2. The government budget balances. As the government does not make purchases, the aggregate net tax revenue must equal zero:
+
+$$
+p_L[y_L-\lambda y_L^{1-\tau}]
++p_H[y_H-\lambda y_H^{1-\tau}]=0.
+$$
+
+3. The goods market clears. Aggregate consumption must equal aggregate production: 
+
+$$
+p_Lc_L+p_Hc_H=p_Ly_L+p_Hy_H.
+$$
+Again, if the first two conditions are met, then the third is also met via Walras' law.
+
+### b:
+
+$$
+\begin{aligned}
+\max_{c_i,n_i}\quad
+&\ln(c_i)-\frac{n_i^2}{2}\\
+\text{s.t.}\quad
+&c_i=\lambda(w_i n_i)^{1-\tau}.
+\end{aligned}
+$$
+
+Substituting the budget constraint into utility:
+
+$$
+\max_{n_i}\quad
+\ln\left[\lambda(w_i n_i)^{1-\tau}\right]
+-\frac{n_i^2}{2}.
+$$
+
+$$
+\max_{n_i}\quad
+\ln(\lambda)+(1-\tau)\ln(w_i)
++(1-\tau)\ln(n_i)-\frac{n_i^2}{2}.
+$$
+
+FOCs:
+
+$$
+\begin{aligned}
+\frac{\partial V_L}{\partial n_L}
+&=\frac{1-\tau}{n_L}-n_L=0,\\
+\frac{\partial V_H}{\partial n_H}
+&=\frac{1-\tau}{n_H}-n_H=0.
+\end{aligned}
+$$
+
+Rearranging the conditions gives:
+
+$$
+n_L^2=n_H^2=1-\tau.
+$$
+
+$$
+n_i(\tau)=\sqrt{1-\tau}.
+$$
+
+$$
+y_i(\tau)=w_i\sqrt{1-\tau}.
+$$
+
+Substitute the tax function into the government budget constraint and rearrange:
+
+$$
+\lambda=
+\frac{p_Ly_L+p_Hy_H}
+{p_Ly_L^{1-\tau}+p_Hy_H^{1-\tau}}.
+$$
+
+Substitute the definition of $y_i$:
+
+$$
+\lambda(\tau)=
+\frac{\sqrt{1-\tau}(p_Lw_L+p_Hw_H)}
+{(1-\tau)^{(1-\tau)/2}
+(p_Lw_L^{1-\tau}+p_Hw_H^{1-\tau})}.
+$$
+
+$$
+\lambda(\tau)=
+\frac{(p_Lw_L+p_Hw_H)(1-\tau)^{\tau/2}}
+{p_Lw_L^{1-\tau}+p_Hw_H^{1-\tau}}.
+$$
+
+Take the condition for consumption, substitute $\lambda(\tau)$ and simplify:
+
+$$
+c_i(\tau)=
+\frac{\sqrt{1-\tau}(p_Lw_L+p_Hw_H)w_i^{1-\tau}}
+{p_Lw_L^{1-\tau}+p_Hw_H^{1-\tau}}.
+$$
+
+$$
+\begin{aligned}
+ATR(y)
+&=\frac{T(y)}{y}\\
+&=\frac{y-\lambda y^{1-\tau}}{y}\\
+&=1-\lambda y^{-\tau}.
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+MTR(y)
+&=T'(y)\\
+&=\frac{d}{dy}\left(y-\lambda y^{1-\tau}\right)\\
+&=1-\lambda(1-\tau)y^{-\tau}.
+\end{aligned}
+$$
+
+### c:
+
+
+$$
+\begin{aligned}
+\max_{\tau,\lambda,\{c_i,n_i,y_i\}_{i\in\{L,H\}}}\quad
+&p_L\alpha_L\left[\ln(c_L)-\frac{n_L^2}{2}\right]
++p_H\alpha_H\left[\ln(c_H)-\frac{n_H^2}{2}\right]\\
+\text{s.t.}\quad
+&c_i=\lambda(w_i n_i)^{1-\tau},\\
+&\frac{1-\tau}{n_i}-n_i=0,\\
+&y_i=w_i n_i,\\
+&p_L[y_L-\lambda y_L^{1-\tau}]
++p_H[y_H-\lambda y_H^{1-\tau}]=0,\\
+&p_Lc_L+p_Hc_H=p_Ly_L+p_Hy_H,\\
+&\lambda>0,\quad 0\leq\tau<1.
+\end{aligned}
+$$
+
+### d:
+
+For a given $\tau$, the equilibrium functions $c_i(\tau)$, $n_i(\tau)$, $y_i(\tau)$, and $\lambda(\tau)$ derived in part b satisfy the TDCE constraints from part c. So, we can substitute these functions into social welfare:
+
+$$
+\begin{aligned}
+\max_{0\leq\tau<1}\quad W(\tau)
+={}&p_L\alpha_L\left[\ln(c_L(\tau))-\frac{n_L(\tau)^2}{2}\right] +p_H\alpha_H\left[\ln(c_H(\tau))-\frac{n_H(\tau)^2}{2}\right].
+\end{aligned}
+$$
+
+The population shares $p_i$ enter both the welfare objective and the government budget constraint. The welfare weights $\alpha_i$ enter only the welfare objective.
 
 # Q4 (Daniel)
 
