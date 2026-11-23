@@ -407,6 +407,7 @@ The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to det
 \newpage
 
 # Q1: Daniel
+Part A:
 a)
 $$
 \max_{c_h, c_l, n_h, n_l} \frac{1}{2}(u(c_h)-v(n_h))+\frac{1}{2}(u(c_l)  -n(n_l)) \\
@@ -429,17 +430,65 @@ b)
 Both types would choose $(c_L, y_L)$. Both types choose this bundle because both bundles have the same amount of consumption, but the low type bundle requires the worker to produce less, and thus enjoy more leisure. 
 
 c)
-Incentive compatibility means that the high type would prefer it's bundle over the low types bundle: 
+Incentive compatibility means that the high type would prefer it's bundle over the low types bundle, and that the low type would prefer it's bundle over the high types bundle: 
 $$
-u(c_h) - v(y_h w_h^{-1}) - u(c_l)+v(y_l w_h^{-1})>0
+u(c_h) - v(y_h w_h^{-1}) - u(c_l)+v(y_l w_h^{-1})>0 \\
+u(c_l) - v(y_l w_l^{-1}) - u(c_h)+v(y_h w_l^{-1})>0
+
 $$
+Adding the incentive compatibility constraints to the planners problem effectively restricts their information set by requiring that at the bundle they choose for the household would also be the bundle the household would choose if offered both bundles. The low types incentive compatibility condition is slack because producing at the high type bundle would require an extremely high allocation of labor, which would have a very large dis-utility given that the dis-utility of labor function is convex. The high types incentive compatibility constraint holds with equality because to satisfy the high types compatibility constraint $y_l < y_h$, which implies that the marginal utility of income is higher for the low type, so transfers to the low type household are welfare improving up until the high type compatibility constraint binds. These constraints prevent the planner from implementing it's first best solution.
 $$
 \max_{c_h, c_l, y_h, y_l}  \frac{1}{2}(u(c_h)-v(y_h w_h ^{-1}))+\frac{1}{2}(u(c_l)  -n(y_lw_l^{-1})) \\
 \text{Subject to:}\\
 c_h +c_l= w_h n_h + w_ln_l\\
+u(c_h) - v(y_hw_h^{-1}) = u(c_l) - v(y_l w_h^{-1}) \\
+u(c_l) - v(y_l w_l^{-1}) = u(c_h)-v(y_h w_l^{-1})
+$$
+d) 
+The lectures three main results where that:
+
+The high type must have more consumption than the low type, and that their utilities must be at least equal. This result comes from the fact that we don't want the high type to mimic the how type and provide less labor. 
+
+The marginal tax rate on the high type must be zero. This comes from the fact that we want the high type to provide as much labor as possible without violating incentive compatibility. If the high type faced a positive marginal rate it would disincentive them from providing labor, and force us to offer them more consumption to dissuade mimicking. 
+
+The marginal tax rate at the bottom of the distribution must be positive. This is to further disincentive mimicking by the high type.
+
+Part B: 
+
+e) 
+
+$$
+\max_{c_i, n_i} u(c_i)- v(n_i) \\
+\text{Subject to:} \\
+c_i = w_in_i-T(w_in_i;\theta)
+$$
+Which yields FOCs:
+$$
+c_i: u'(ci) -\lambda = 0 \\
+n_i -v'(n_i) -\lambda w_i + w_iT'(w_in_i;\theta) =0
+$$
+Which can be combined to obtain:
+$$
+w_i T'(w_in_i;\theta) =u'(c_i)w_i+v'(n_i)
 $$
 
+The households internalizes the tax schedule when choosing it's optimal labor supply, so a higher income tax rate will make it so the marginal rate of transformation between labor supply and utility decreases faster, resulting in a lower labor supply, this is especially true if the marginal tax rate is positive!
 
+ f) 
+ A tax distorted competitive equilibrium is a set of prices and allocations such that markets clear, agents maximize subject the distortions created by the mode of taxation, and the government budget constraint balances. 
+ 
+g)
+$$
+\max_{\tau, B, c_l, c_h, n_l, n_h} \frac{1}{2}[u(c_l)-v(n_l)]+ \frac{1}{2}[u(c_h) -v(n_h)] \\
+\text{Subject to:} \\
+c_l = w_ln_l -T(w_ln_l;\theta) \\
+c_h = w_hn_h - T(w_hn_h;\theta) \\
+w_h T'(w_hn_h) =u'(c_h)w_h+v'(n_h) \\
+w_l T'(w_ln_l) =u'(c_l)w_l+v'(n_l) \\
+B = \frac{1}{2}[T(w_ln_l;\theta)+T(w_hn_h;\theta)]
+
+$$
+By forcing the planner to respect the household optimality conditions we restrict the planner to tax schedules which can be financed given the behavioral distortions they cause. To solve this problem we first must write each constraint as a function of $\theta$, and then discretize a grid of possible values of $\theta$ and use a a graph of numerical solver to find which value of $\theta$ maximizes welfare. 
 \newpage
 
 # Q2 Linear Taxation
@@ -857,5 +906,7 @@ $$
 The population shares $p_i$ enter both the welfare objective and the government budget constraint. The welfare weights $\alpha_i$ enter only the welfare objective.
 
 # Q4 (Daniel)
+
+
 
 # Q5 (together)
