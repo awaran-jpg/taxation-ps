@@ -883,7 +883,6 @@ $$
 
 ### c:
 
-
 $$
 \begin{aligned}
 \max_{\tau,\lambda,\{c_i,n_i,y_i\}_{i\in\{L,H\}}}\quad
@@ -912,6 +911,72 @@ $$
 $$
 
 The population shares $p_i$ enter both the welfare objective and the government budget constraint. The welfare weights $\alpha_i$ enter only the welfare objective.
+
+### e:
+
+![](hsv_welfare.png){#fig-hsv-welfare width="85%" fig-align="center" fig-pos="H"}
+
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lcc}
+\hline
+Objective Maximized & $\tau$ & $\lambda$ \\
+\hline
+$W$   & 0.290 & 1.196355 \\
+$V_L$ & 0.575 & 1.205243 \\
+$V_H$ & 0.000 & 1.000000 \\
+\hline
+\end{tabular}
+\end{table}
+
+The two types prefer different policies because they have different benefits and costs from redistribution. For example, the low type would benefit more from a more progressive system, as that would increase its share of after-tax income more. However, this would also reduce labor supply, so the gains are limited and they prefer an intermediate parameter. As for the high type, they would pay more under a more progressive system overall and have a reduction in consumption and labor supply, so they prefer a parameter with no redistribution.
+
+The planner would choose the low type's preferred policy if they assigned all welfare weight to the low type, and choose the high type's preferred policy they assigned all welfare weight to the high type.
+
+
+\begin{center}
+\begin{tabular}{lcccc}
+Case & $\tau^*$ & $\lambda^*$ & $\bar{y}^*$ & $W^*$ \\
+\hline
+Benchmark & 0.290 & 1.196355 & 1.685230 & 0.046351 \\
+(f) Welfare weights & 0.414 & 1.233294 & 1.531013 & -0.012653 \\
+(g) Population & 0.292 & 1.138256 & 1.402379 & -0.043735 \\
+\end{tabular}
+\end{center}
+
+### f:
+
+answer
+
+### g:
+
+answer
+
+### h:
+
+answer
+
+### i:
+
+\begin{center}
+\begin{tabular}{lccc|cccc}
+& \multicolumn{3}{c|}{Inputs} & \multicolumn{4}{c}{At the optimum} \\
+Case & $w_H$ & $p_L$ & $p_H$ & $\tau^*$ & $\lambda^*$ & $\bar{y}^*$ & $W^*$ \\
+\hline
+Benchmark & 3 & 0.50 & 0.50 & 0.290 & 1.196355 & 1.685230 & 0.046351 \\
+\hline
+95/5: wage only & 5 & 0.50 & 0.50 & 0.414 & 1.505498 & 2.296519 & 0.215550 \\
+95/5: share only & 3 & 0.95 & 0.05 & 0.133 & 1.009264 & 1.024241 & -0.219261 \\
+95/5: both & 5 & 0.95 & 0.05 & 0.245 & 1.036525 & 1.042689 & -0.193481 \\
+\hline
+99/1: wage only & 20 & 0.50 & 0.50 & 0.611 & 3.740891 & 6.548836 & 0.761926 \\
+99/1: share only & 3 & 0.99 & 0.01 & 0.039 & 1.000459 & 0.999912 & -0.244299 \\
+99/1: both & 20 & 0.99 & 0.01 & 0.290 & 1.054431 & 1.002712 & -0.201157 \\
+\end{tabular}
+\end{center}
+
+answer
 
 # Q4 (Daniel)
 
