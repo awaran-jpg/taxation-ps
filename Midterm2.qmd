@@ -410,6 +410,7 @@ The Ramsey problem can be solved by solving the TDCE for a given $\theta$ to det
 Part A:
 a)
 $$
+\begin{gathered}
 \max_{c_h, c_l, n_h, n_l} \frac{1}{2}(u(c_h)-v(n_h))+\frac{1}{2}(u(c_l)  -n(n_l)) \\
 \text{Subject to:}\\
 c_h +c_l= w_h n_h + w_ln_l\\
@@ -418,6 +419,7 @@ c_h: u'(c_h) -\lambda = 0 \\
 c_l: u'(c_l) - \lambda = 0 \\
 n_l: -v'(n_l) + \lambda w_l = 0 \\
 n_h: -v'(n_h) + \lambda w_h = 0 \\
+\end{gathered}
 $$
 It follows that the planner's first best solution occurs when $c_h = c_n$, and 
 $$
@@ -432,9 +434,10 @@ Both types would choose $(c_L, y_L)$. Both types choose this bundle because both
 c)
 Incentive compatibility means that the high type would prefer it's bundle over the low types bundle, and that the low type would prefer it's bundle over the high types bundle: 
 $$
+\begin{gathered}
 u(c_h) - v(y_h w_h^{-1}) - u(c_l)+v(y_l w_h^{-1})>0 \\
 u(c_l) - v(y_l w_l^{-1}) - u(c_h)+v(y_h w_l^{-1})>0
-
+\end{gathered}
 $$
 Adding the incentive compatibility constraints to the planners problem effectively restricts their information set by requiring that at the bundle they choose for the household would also be the bundle the household would choose if offered both bundles. The low types incentive compatibility condition is slack because producing at the high type bundle would require an extremely high allocation of labor, which would have a very large dis-utility given that the dis-utility of labor function is convex. The high types incentive compatibility constraint holds with equality because to satisfy the high types compatibility constraint $y_l < y_h$, which implies that the marginal utility of income is higher for the low type, so transfers to the low type household are welfare improving up until the high type compatibility constraint binds. These constraints prevent the planner from implementing it's first best solution.
 $$
@@ -477,17 +480,21 @@ The households internalizes the tax schedule when choosing it's optimal labor su
  f) 
  A tax distorted competitive equilibrium is a set of prices and allocations such that markets clear, agents maximize subject the distortions created by the mode of taxation, and the government budget constraint balances. 
  
+
 g)
 $$
-\max_{\tau, B, c_l, c_h, n_l, n_h} \frac{1}{2}[u(c_l)-v(n_l)]+ \frac{1}{2}[u(c_h) -v(n_h)] \\
-\text{Subject to:} \\
-c_l = w_ln_l -T(w_ln_l;\theta) \\
-c_h = w_hn_h - T(w_hn_h;\theta) \\
-w_h T'(w_hn_h) =u'(c_h)w_h+v'(n_h) \\
-w_l T'(w_ln_l) =u'(c_l)w_l+v'(n_l) \\
-B = \frac{1}{2}[T(w_ln_l;\theta)+T(w_hn_h;\theta)]
-
+\begin{aligned}
+\max_{\tau, B, c_l, c_h, n_l, n_h}\quad
+&\frac{1}{2}[u(c_l)-v(n_l)]+ \frac{1}{2}[u(c_h)-v(n_h)] \\
+\text{Subject to:}\quad
+&c_l = w_ln_l -T(w_ln_l;\theta) \\
+&c_h = w_hn_h - T(w_hn_h;\theta) \\
+&w_h T'(w_hn_h) =u'(c_h)w_h+v'(n_h) \\
+&w_l T'(w_ln_l) =u'(c_l)w_l+v'(n_l) \\
+&B = \frac{1}{2}[T(w_ln_l;\theta)+T(w_hn_h;\theta)]
+\end{aligned}
 $$
+
 By forcing the planner to respect the household optimality conditions we restrict the planner to tax schedules which can be financed given the behavioral distortions they cause. To solve this problem we first must write each constraint as a function of $\theta$, and then discretize a grid of possible values of $\theta$ and use a a graph of numerical solver to find which value of $\theta$ maximizes welfare. 
 \newpage
 
@@ -772,6 +779,7 @@ $$
 $$
 p_Lc_L+p_Hc_H=p_Ly_L+p_Hy_H.
 $$
+
 Again, if the first two conditions are met, then the third is also met via Walras' law.
 
 ### b:
