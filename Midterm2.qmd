@@ -852,7 +852,7 @@ $$Dividing both sides by $y_i$ results in the average tax rate$$
 \frac{T(y_i)}{y_i} = \frac{c_i}{y_i} -1
 $$Using the household FOCs to solve for $T(y_i)$ we arrive at $$
 T'(y_i) = w_iu'(c_i) +v'(n_i) \\ T'(y_i) = w_i \frac{1}{c_i} + \frac{y_i}{w_i} \$\$ d)
-
+#Baby's first numerical solver :)
 ```{r}
 library(tidyr)
 
@@ -860,8 +860,8 @@ w_l <- 1
 w_h <- 3
 p_l <- 0.5
 p_h <- 0.5
-a_l <- 0.5
-a_h <- 0.5
+a_l <- 1/2
+a_h <- 1/2
 
 grid<-crossing(y_l = seq(0, 1.28*w_l, by = 0.016*w_l), y_h = seq(0, 2.5*w_h, by = 0.025*w_h), c_l = seq(0.006, 9.6, by = 0.006))|>
   mutate(y_bar = p_h*y_h+p_l*y_l)|>
@@ -904,6 +904,65 @@ H & 3.45 & 2.61 & 0.84 & 0.243 & 0 & 0 & 1.99 & 0.118 \\
 \end{tabular}
 \end{center}
 
+C:
+
+\begin{center}
+\begin{tabular}{c|c|cccccccc}
+\hline
+Case & Type & $y_i$ & $c_i$ & $T(y_i)$ & ATR & MTR & $\Delta_i$ & $\bar y$ & W \\
+\hline
+Benchmark & L & 0.528 & 1.37 & -0.84 & -1.59 & 0.278 & 5.17 & 1.99 & 0.118 \\
+          & H & 3.45 & 2.61 & 0.84 & 0.243 & 0 & 0 & 1.99 & 0.118 \\
+\hline
+Preferences & L & 0.4 & 1.31 & -0.914 & -2.285 & 0.4744 & 5.446 & 1.9625 & 0.109 \\
+$(\alpha_H = 1/3, \alpha_L = 2/3)$& H & 3.525 & 2.611 & 0.914& 0.259 & -0.023 & 0.005 & 1.9625 & 0.109 \\
+\hline 
+Population & L & 0.608 & 1.2 & -0.592 & -0.973 & 0.2704 & 5.837 & 1.630 & 0.026 \\
+$(p_H = 1/3, p_L = 2/3$ & H & 3.675 & 2.491 & 1.184 & 0.322 & -0.017 & 0 & 1.630 & 0.026 \\
+\hline
+\end{tabular}
+\end{center}
+e) 
+When the planners preferences change they transfer more wealth from the high type to the low type because they value the low types utility more. This is reflected in the planners optimum, which features higher taxes for the high type and larger transfers to the low type. However it appears like the planners desire to improve the utility of the low type more is reflected in a decrease to their labor supplu rather than an increase to their consumption (their consumption goes down). To implement these changes the planner must significantly raise the marginal tax rate on the low type to discourage mimicking. Even with this new tax change the planner cannot shift resources by much more while adhering to the incentive compatibility conditions. Welfare decreases slightly relative to the baseline specification. I'm a bit confused about this result, and it may be a result of the grid, or the fact that the planner is more constrained by incentive compatibility.  
+
+f) 
+With more low type members and fewer high type members the total productive capacity of the economy decreases. As there are more low type households the planner forces them to work more, and also forces the high types to work more as well, both because at the same labor supply the marginal utility of consumption across both groups would be higher than the marginal dis-utility of labor. Consumption in both groups still decreases relative to the baseline. The high types are taxed more because there are more low types to distribute resources to, but the transfer each low type recieves is lower than the benchmark. Welfare is significantly lower because the economy is less productive as a whole.
+
+g) 
+No! even though the coefficients are the exact same the bundles are different because the amount of resources the planner has to redistribute is lower when there are more lowtypes.
+
+h) 
+\begin{center}
+\begin{tabular}{l c|ccccccc}
+\hline
+Case & Type & $y_i$ & $c_i$ & $T(y_i)$ & ATR (\%) & MTR (\%) & $\bar y$ & $W$ \\
+\hline
+Benchmark & L & 0.528 & 1.37 & -0.84 & -1.59 & 0.278 & 1.99 & 0.118 \\
+          & H & 3.45 & 2.61 & 0.84 & 0.243 & 0  & 1.99 & 0.118 \\
+\hline
+95/5: wage only    & $L$ & 0.32 & 2.07  & -1.75 & -5.47 & 0.337 & 3.16 & 0.35 \\
+                   & $H$ & 6  & 4.25 & 1.75 & 0.29& 0 &  &  \\
+95/5: share only   & $L$ & 0.928 & 1.014   & -0.086  & -0.09  & 0.06 & 1.07  &  -0.2 \\
+                   & $H$ & 3.9 &  2.266&  1.634&0.412  &  0&   &  \\
+95/5: both         & $L$ &  0.832&1.056  &-0.224  &-0.27  &0.12  &1.16  &-0.14  \\
+                   & $H$ & 7.5 & 3.244  & 4.256  & 0.567  & 0 &  &  \\
+\hline
+99/1: wage only    & $L$ & 0.08 & 7.884  &  -7.8 & -97.55  & 0.37  &12.29  & 1.031  \\
+                   & $H$ & 24.5 & 16.7  & 7.8 & 0.32  &  0&  &  \\
+99/1: share only   & $L$ & 0.991 &1.008  &-0.016  &  -0.016&  0& 1.0766 & -0.20  \\
+                   & $H$ & 3.9 &  2.316 & 1.584  & 0.406  &0  &  &  \\
+99/1: both         & $L$ & 0.816 & 1.134  & -0.318 & -0.39  & 0.0746  & 1.2 & -0.1 \\
+                   & $H$ & 41 & 9.518 & 31.5 & 0.76  & 0 &  &  \\
+\hline
+\end{tabular}
+\end{center}
+
+In both splits the wage only case results in a much higher consumption and welfare relative to baseline because the economy has strictly more resources. The opposite is true for the share only cases because the economy has strictly fewer resources. When wages increase so do transfers and the average tax rate on the high type households because they have more resources, and hence a lower marginal utility relative to the low type households at the baseline level of redistribution. When the shares change and the wages stay constant the average tax on the wealthy hoses drastically increases, but the average benefit received by the low type households goes down. This is because more redistribution is needed to balance marginal utilities of income to the optimal level given the incentive compatibility constraints. When only the share changes the labor supply of low type households drastically increases because the planners ability to provide them consumption through redistribution is severly limited.
+
+When both the shares and wages change the average tax on high types is the largest because they have relatively more resources which can be redistributed, and there are many low types which can benefit from redistribution. Welfare in both cases is significantly lower than in the baseline case, which indicates the wage effect is much smaller than the size effect. I think that this is because the size effect works in both directions, reducing the number of high types and also increasing the number of high types. When the average tax on the high types increases the marginal tax rate on the low types must increase to disincentive mimicking. 
+
+The low type recieves much more generous transfers when wages change the poputlation shares do not. They also recieve larger transfers in the full 99/1 calibration relative to the 95/5 calibration. I think thus may be because when there is a large disparity in ability the planner can squeeze more out of the high types before their incentive compatibility constraint binds. 
+
 # Q5 (together)
 
 ### za:
@@ -923,8 +982,8 @@ Linear & $L$ & 0.6705 & 0.6705 & 0.9947 & -0.3242 & -48.35\% & 33.30\% & -0.2301
 HSV & $L$ & 0.8426 & 0.8426 & 1.0594 & -0.2168 & -25.73\% & 10.73\% & -0.297305 & 0.046351 & 22.47 \\
     & $H$ & 0.8426 & 2.5278 & 2.3111 & 0.2168 & 8.58\% & 35.09\% & 0.482710 & & -10.94 \\
 \hline
-Mirrlees & $L$ & & & & & & & & & \\
-         & $H$ & & & & & & & & & \\
+Mirrlees & $L$ & 0.528 &0.528 &1.368 &-0.84 &-1.59 &0.277 &0.17 &0.118 & 96.2\% \\
+         & $H$ & 1.15 & 3.45 &2.61 &0.84 & 0.24&0 & 0.298 & 0.118 & -26.0\%\\
 \hline
 \end{tabular}
 \end{center}
@@ -935,6 +994,6 @@ Policy & $\bar{y}$ & Change from no tax (\%) \\
 No tax & 2.000000 & 0.00 \\
 Linear & 1.644044 & -17.80 \\
 HSV & 1.685230 & -15.74 \\
-Mirrlees & & \\
+Mirrlees &1.989  &-0.55 \\
 \end{tabular}
 \end{center}
